@@ -2,7 +2,7 @@ package com.juniori.puzzle.data.firebase
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.juniori.puzzle.util.BASE_URL
+import com.juniori.puzzle.util.STORAGE_BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,7 +43,7 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit = Retrofit.Builder()
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(gson))
-        .baseUrl(BASE_URL)
+        .baseUrl(STORAGE_BASE_URL)
         .build()
 
     @Singleton
