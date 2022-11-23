@@ -1,7 +1,9 @@
-package com.juniori.puzzle.data.firebase
+package com.juniori.puzzle.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.juniori.puzzle.data.firebase.FireStoreDataSource
+import com.juniori.puzzle.data.firebase.FirebaseService
 import com.juniori.puzzle.util.STORAGE_BASE_URL
 import dagger.Module
 import dagger.Provides
