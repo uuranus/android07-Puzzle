@@ -42,6 +42,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
+    @Storage
     fun provideRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit = Retrofit.Builder()
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(gson))
@@ -50,7 +51,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideFirebaseService(retrofit: Retrofit): FirebaseService =
+    fun provideFirebaseService(@Storage retrofit: Retrofit): FirebaseService =
         retrofit.create(FirebaseService::class.java)
 
     @Singleton
